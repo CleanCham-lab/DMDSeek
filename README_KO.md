@@ -1,4 +1,15 @@
-# DMDSeek — PacBio HiFi BAM에서 DMD exon 결실·중복 판정
+<p align="center">
+  <img alt="DMDSeek - DMD exon deletion / duplication calling from PacBio HiFi long reads" src="docs/dmdseek_banner.png" width="760">
+</p>
+
+<p align="center">
+  <a href="https://github.com/CleanCham-lab/DMDSeek/releases/latest"><img alt="release" src="https://img.shields.io/github/v/release/CleanCham-lab/DMDSeek"></a>
+  <a href="LICENSE"><img alt="license" src="https://img.shields.io/badge/license-MIT-blue"></a>
+  <img alt="platform" src="https://img.shields.io/badge/platform-Linux%20x86__64%20%7C%20WSL2-lightgrey">
+  <img alt="input" src="https://img.shields.io/badge/input-PacBio%20HiFi%20BAM%20(GRCh38)-0E9F9A">
+</p>
+
+<p align="center"><a href="README.md">English</a> · <b>한국어</b> · <a href="https://github.com/CleanCham-lab/DMDSeek/releases/latest">다운로드</a></p>
 
 BAM 하나(WGS 또는 Twist targeted)를 넣으면 고정된 기준 패널과 비교해 DMD exon 1–79의 결실·중복을 판정하고,
 Sawfish breakpoint로 경계를 확정한 뒤 HTML 보고서(MLPA식 exon 그림 포함)를 만듭니다.
@@ -57,7 +68,7 @@ DMD 결실·중복이 있는 샘플이 섞여 있어도 됩니다(0에 가까운
 ## 실행
 
 ```bash
-tar -xzf dmdseek-1.0.0-linux-x86_64.tar.gz
+tar -xzf dmdseek-1.0.0-linux-x86_64-public.tar.gz   # Releases 페이지에서 다운로드
 ./dmdseek/dmdseek call sample.bam --ref GRCh38.fa -o results/
 ./dmdseek/dmdseek call *.bam --ref GRCh38.fa -o results/ -t 8      # 여러 개: 샘플별 폴더 + dmdseek_summary.tsv
 ./dmdseek/dmdseek call --list samples.xlsx --ref GRCh38.fa -o results/  # 샘플 시트(CSV/TSV/XLSX: sample_id, bam)

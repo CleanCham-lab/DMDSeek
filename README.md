@@ -1,4 +1,15 @@
-# DMDSeek — DMD exon deletion/duplication caller for PacBio HiFi BAMs
+<p align="center">
+  <img alt="DMDSeek - DMD exon deletion / duplication calling from PacBio HiFi long reads" src="docs/dmdseek_banner.png" width="760">
+</p>
+
+<p align="center">
+  <a href="https://github.com/CleanCham-lab/DMDSeek/releases/latest"><img alt="release" src="https://img.shields.io/github/v/release/CleanCham-lab/DMDSeek"></a>
+  <a href="LICENSE"><img alt="license" src="https://img.shields.io/badge/license-MIT-blue"></a>
+  <img alt="platform" src="https://img.shields.io/badge/platform-Linux%20x86__64%20%7C%20WSL2-lightgrey">
+  <img alt="input" src="https://img.shields.io/badge/input-PacBio%20HiFi%20BAM%20(GRCh38)-0E9F9A">
+</p>
+
+<p align="center"><b>English</b> · <a href="README_KO.md">한국어</a> · <a href="https://github.com/CleanCham-lab/DMDSeek/releases/latest">Download</a></p>
 
 **DMDSeek** calls exon-level deletions and duplications in *DMD* (GRCh38, MANE NM_004006.3, 79 exons)
 from one PacBio HiFi BAM, either whole-genome (WGS) or Twist targeted capture. It compares the
@@ -63,7 +74,7 @@ Saved as `dmdseek/reference/dmd_reference.npz` it is used automatically; elsewhe
 ## Quick start
 
 ```bash
-tar -xzf dmdseek-1.0.0-linux-x86_64.tar.gz
+tar -xzf dmdseek-1.0.0-linux-x86_64-public.tar.gz   # from the Releases page
 ./dmdseek/dmdseek call sample.bam --ref GRCh38.fa -o results/
 # several BAMs: one sub-folder per sample + results/dmdseek_summary.tsv
 ./dmdseek/dmdseek call a.bam b.bam c.bam --ref GRCh38.fa -o results/ -t 8
