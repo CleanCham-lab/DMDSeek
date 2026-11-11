@@ -15,6 +15,34 @@ BAM 하나(WGS 또는 Twist targeted)를 넣으면 고정된 기준 패널과 �
 Sawfish breakpoint로 경계를 확정한 뒤 HTML 보고서(MLPA식 exon 그림 포함)를 만듭니다.
 연구용이며, 보고 전 MLPA 등 다른 방법과 IGV로 확인해야 합니다.
 
+## 듀시엔형 근이영양증(DMD)이란
+
+**듀시엔형 근이영양증**(Duchenne muscular dystrophy, DMD)은 남아 약 5,000명 중 1명에게 생기는 X 연관
+열성 근육 질환입니다. 근육 세포를 지탱하는 단백질인 디스트로핀(dystrophin)이 없어 근육이 수축할 때마다
+손상되고, 대개 10대 초반에 걷지 못하게 되며 이후 심장과 호흡 기능이 떨어집니다. 같은 유전자의 이상이라도
+짧아진 디스트로핀이 일부 기능하면 증상이 가벼운 **베커형 근이영양증**(Becker muscular dystrophy, BMD)이 됩니다.
+
+*DMD* 유전자(Xp21)는 사람에서 가장 큰 유전자 중 하나로 약 2.2 Mb, exon 79개입니다. 환자에서 발견되는 변이:
+
+| 변이 종류 | 환자 중 비율(대략) | |
+|---|---|---|
+| exon 1개 이상 결실 | 약 3분의 2 | 자주 생기는 구간: exon 45-55, 3-20 |
+| exon 1개 이상 중복 | 약 10% | |
+| 작은 염기 변이(SNV / indel) | 약 20-25% | DMDSeek 대상 아님 |
+
+결실이 **reading frame**을 깨뜨리면(out-of-frame) 대개 듀시엔형, 유지하면(in-frame) 대개 베커형입니다
+(reading-frame rule, 약 90%에서 맞음). 어떤 exon이 빠졌는지는 특정 exon을 건너뛰게 만드는
+**exon skipping 치료제**(exon 51, 53, 45 등) 대상인지도 결정합니다. 여성은 X 염색체 하나에만 변이가 있는
+보인자일 수 있어, 어머니·자매의 이형접합 결실 확인이 유전상담에 중요합니다.
+
+**왜 long read인가?** 표준 검사인 MLPA는 exon별 copy 수는 알려주지만 결실이 정확히 어디서 시작하고
+끝나는지는 알 수 없고, probe 자리에 염기 변이가 있으면 결실처럼 보이기도 합니다. PacBio HiFi read는 결실
+경계(breakpoint)를 직접 가로지를 만큼 길어서, DMDSeek는 exon 단위 copy 수와 정확한 접합 위치를 함께
+보고합니다(WGS와 targeted 모두).
+
+<sub>수치: Lim et al., *J Pers Med* 2020 ([PMC7712074](https://pmc.ncbi.nlm.nih.gov/articles/PMC7712074));
+승인된 exon skipping 치료제: Roshmi et al., *Clin Pharmacol* 2021 ([PMC8688746](https://pmc.ncbi.nlm.nih.gov/articles/PMC8688746)).</sub>
+
 ## 시작 전에 (공개 배포본)
 
 공개 배포본(`dmdseek-<버전>-linux-x86_64-public.tar.gz`)에는 프로그램만 들어 있습니다. 처음 실행 전에

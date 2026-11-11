@@ -19,6 +19,37 @@ then writes an HTML report with an exon-level (MLPA-like) chart.
 Research use only. Confirm reportable findings with an orthogonal method (MLPA, qPCR) and review the
 reads in IGV.
 
+## About Duchenne muscular dystrophy
+
+**Duchenne muscular dystrophy (DMD)** is an X-linked recessive muscle disease affecting about 1 in 5,000
+boys. Without dystrophin, muscle fibres are damaged with every contraction: children usually lose the
+ability to walk by their early teens and later develop heart and breathing failure. **Becker muscular
+dystrophy (BMD)** comes from the same gene but is milder, because a shortened, partly working
+dystrophin is still made.
+
+The *DMD* gene (Xp21) is one of the largest human genes - about 2.2 Mb with 79 exons. Variants found in
+patients:
+
+| variant type | share of patients (approx.) | |
+|---|---|---|
+| deletion of one or more exons | about two-thirds | hotspots: exons 45-55 and 3-20 |
+| duplication of one or more exons | about 10% | |
+| small sequence variants (SNV / indel) | about 20-25% | not covered by DMDSeek |
+
+Whether a deletion keeps the **reading frame** largely predicts the disease: out-of-frame usually gives
+Duchenne, in-frame usually Becker (the reading-frame rule holds in about 90%). The exact exons involved
+also decide eligibility for **exon-skipping drugs**, each made for one exon (e.g. exon 51, 53 or 45).
+Women can carry the variant on one X chromosome, so finding heterozygous deletions in mothers and
+sisters matters for genetic counselling.
+
+**Why long reads?** MLPA, the routine test, counts copies per exon but cannot show where a deletion
+starts and ends, and a sequence variant under a single probe can look like a deletion. PacBio HiFi reads
+are long enough to cross the breakpoint itself, so DMDSeek reports the exon-level copy number together
+with the exact junction, from whole-genome or targeted data.
+
+<sub>Numbers: Lim et al., *J Pers Med* 2020 ([PMC7712074](https://pmc.ncbi.nlm.nih.gov/articles/PMC7712074));
+approved exon-skipping drugs: Roshmi et al., *Clin Pharmacol* 2021 ([PMC8688746](https://pmc.ncbi.nlm.nih.gov/articles/PMC8688746)).</sub>
+
 ## Before you start (public release)
 
 The public bundle (`dmdseek-<version>-linux-x86_64-public.tar.gz`) contains the program only.
