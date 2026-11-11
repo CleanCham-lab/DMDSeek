@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use DMDSeek, please cite it as below."
+title: "DMDSeek: DMD exon deletion/duplication calling from PacBio HiFi long reads"
+version: 1.0.0
+date-released: 2026-11-11
+license: MIT
+authors:
+  - family-names: Chae
+    given-names: Seung Won
+    affiliation: "Department of Laboratory Medicine, Seoul National University Hospital; Seoul National University Cancer Research Institute"
+  - family-names: Seong
+    given-names: Moon-woo
+    affiliation: "Department of Laboratory Medicine, Seoul National University Hospital; Seoul National University Cancer Research Institute"
+keywords:
+  - Duchenne muscular dystrophy
+  - dystrophin
+  - copy-number variation
+  - long-read sequencing
+  - PacBio HiFi
+repository-code: "https://github.com/CleanCham-lab/DMDSeek"

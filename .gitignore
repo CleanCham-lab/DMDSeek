@@ -1,0 +1,7 @@
+build/
+*.tar.gz
+__pycache__/
+*.pyc
+branding/
+reference/
+*.npz

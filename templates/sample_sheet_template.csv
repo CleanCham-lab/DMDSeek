@@ -1,0 +1,7 @@
+# DMDSeek sample sheet. Required: sample_id, bam. Optional: sex (M/F), batch (targeted capture batch).
+# bam: indexed BAM path - absolute, relative to this file, or a Windows path (E:\data\S1.bam) on WSL.
+# Lines starting with # are ignored. Save as CSV (comma), TSV, or use the .xlsx template.
+sample_id,bam,sex,batch
+S001,/data/hifi/S001.bam,M,Batch1
+S002,/data/hifi/S002.bam,F,Batch1
+S003,/data/hifi/S003.bam,,Batch2
